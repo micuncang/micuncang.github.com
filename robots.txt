@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://micuncang.github.io/sitemap.xml 
