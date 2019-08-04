@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C语言学习 - </title>
+  <meta name="author" content="cuncang mi">
+
+  
+  <meta name="description" content="我对C语言的印象目前仅仅是学过而已，大部分都已经忘记，今天决定把它重新拾起来，为后续的一些新语言的接触做准备。那现在就以一个初学者的视角来记录整个的学习过程吧，这样即不怕犯低级的错误也算是有个监督。 update log
+2013-04-26 section: 0001-0005
+2013-04- &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://micuncang.github.io/blog/2013/04/27/cyu-yan-xue-xi/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+
+
+
+
+  
+
+  <style>html{background: url(/images/background.png) no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C语言学习</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T00:23:00+08:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>我对C语言的印象目前仅仅是学过而已，大部分都已经忘记，今天决定把它重新拾起来，为后续的一些新语言的接触做准备。那现在就以一个初学者的视角来记录整个的学习过程吧，这样即不怕犯低级的错误也算是有个监督。</p>
+
+<hr/>
+
+
+<ul>
+<li>update log</li>
+<li>2013-04-26 <i>section: 0001-0005</i></li>
+<li>2013-04-27 <i>section: 0006</i></li>
+<li>2013-05-03 <i>section: 0007</i></li>
+<li>2013-05-08 <i>section: 0008</i></li>
+<li>2013-05-16 <i>section: 0009</i></li>
+<li>2013-05-17 <i>section: 0010</i></li>
+</ul>
+
+
+<hr/>
+
+
+<p><b>0001. 首先应该选本教材呀</b></p>
+
+<p>打开豆瓣读书，直接搜索"C语言学习"，第一个冒出来的是Brian W. Kernighan与Dennis M. Ritchie合著的《C程序设计语言》，评分为9.4，没错就它了，大老美的计算书籍应当没错的。</p>
+
+<p><b>0002. 操作系统有关系吗</b></p>
+
+<p>本人主营Linux与Windows两款操作系统，至今无法完全拒绝Windows的主要原因有二：一是Windows的娱乐性；二是其能便捷处理一些主流的文件格式，譬如OFFICE系列的文件等，可以与其他Windows用户进行文件数据兼容。其实操作系统只是一个运行平台而已，学语言重要的还是学思想，多用一种操作系统确实可以多增加点实战经验，但少用一种操作系统不应成为学不好一种语言的主要理由。因此我学习C语言的过程也必将是一个不断从Linux与Windows之间切换的一个看上去挺拧巴实际上很欢乐的过程。</p>
+
+<p><b>0003. 选一款IDE吧</b></p>
+
+<p>我记得是有人说过写程序最好不借助IDE的智能提示的，也记得看到过在计算机不是很流行的时候程序员在纸上操练程序的故事，具体用不用IDE写程序这件事我就不说谁好谁坏了，我决定还是用IDE吧。打开Google搜索了一下"ide for c programming"，然后就找到了<a href='http://codelite.org'>Codelite</a>这货，看上去还不错的样子，先下载一个Windows下的版本试下，具体上手怎么样还是后续使用时再评测吧，不过这货从图片来看还是有模有样的(当然我们使用软件最注重的还是价格啦哈哈)：</p>
+
+<center><img src="https://raw.github.com/micuncang/micuncang.github.com/master/images/blogimg/codelite-linux.png"></center>
+
+
+<p><br/></p>
+
+<p><b>0004. CodeStyle从什么时候抓起</b></p>
+
+<p>遵循一定的编码规范利己利人，业内一些主流的企业有许多开源出来的编码规范，那是不是先看一遍编码规范再学习语言呢，反正我是说NO的，你想想，一个连DEFINE都不知道是什么的人，你告诉他写这个时应当遵循什么格式，效果未必有多好，因此可以先大致浏览一下规范，有个印象，然后具体学习语言时再返回来参考规范。语言规范是前人大量编程经验的总结，其实如果你够深入，够牛逼的话规范是可以创造的。</p>
+
+<p><b>0005. &lsquo;hello, world'必不可少</b></p>
+
+<p>第一次实战终于来了，安装好Codelite，怀着美好的憧憬打开它。作为有轻微强迫症的我，首先从<code>Plugins-&gt;Source Code Formatter</code>下找到了格式化代码的利器，然后又探索到从Workspace到Project再到Source Code的初创流程，新建工程时，会有友好的模板提示，第一次选好编译器用最简单的模板就好了</p>
+
+<center><img src="https://raw.github.com/micuncang/micuncang.github.com/master/images/blogimg/new_workspace.jpg"></center>
+
+
+<p><br/></p>
+
+<p>工程建立完毕后就已经自动包含一个main.c程序了，里面的内容就是一个简单的hello world程序（确实适合初学者啊，先不管代码具体的含义，能RUN起来调通环境就可以了），代码如下：</p>
+
+<p>File /Users/mcc/Project/github/micuncang.github.com/source/downloads/code/ccode/main.c could not be found</p>
+
+<p>然后在菜单栏的Build中选择Build工程，或者使用快捷键F7（Build的速度有点慢啊~），Build完成提示没有错误就可以RUN了，RUN同样在Build菜单下，或者快捷键Ctrl+F5，然后Codelite会调用一个系统的Console展示运行的结果，大功告成了。</p>
+
+<center><img src="https://raw.github.com/micuncang/micuncang.github.com/master/images/blogimg/helloworld.jpg"></center>
+
+
+<p><br/></p>
+
+<p><b>0006. 插播学习资源</b></p>
+
+<p>在网上查GCC相关资料的时候发现一份不错的在线资料，<a href="http://learn.akae.cn/media/">Linux C编程一站式学习</a>，可以跟之前提到的书籍并发阅读</p>
+
+<p><b>0007. C程序设计语言序与第一章</b></p>
+
+<ul>
+<li>C语言发源地：1973年贝尔实验室</li>
+<li>C++与Java都建立在C语言的语法和基本结构的基础上</li>
+<li>1988年，ANSI为C语言指定了一个精准的标准，标准这种东西向来是对移植有好处的</li>
+<li>Unix系统和运行于其上的软件都是C编写的</li>
+<li>[待延伸]程序加壳，壳是指在一个程序的外面再包裹上另外一段代码，保护里面的代码不被非法修改或反编译的程序。它们一般都先于程序运行，拿到控制权，然后完成它们保护软件的义务。</li>
+<li>[待延伸]ELF格式与PE格式</li>
+<li>Unix cc命令与Linux gcc命令，应该是一个东西，ll一下cc命令就会发现：/usr/bin/cc -> gcc</li>
+<li>C语言程序由函数和变量组成，变量用于存储计算过程中的值</li>
+<li>C函数命名通常没有限制，main是一个特殊的函数名，C程序从main函数开始执行，每个程序必须包含main函数。为此我设计了一个很古怪的函数名<code>_1_a</code>进行测试，完全可以，但是使用数字开头的函数命名是不允许的，像123()。</li>
+</ul>
+
+
+<p>File /Users/mcc/Project/github/micuncang.github.com/source/downloads/code/ccode/main2.c could not be found</p>
+
+<ul>
+<li>注意书写C程序时不要随意换行，会发生编译错误，如下图所示：</li>
+</ul>
+
+
+<center><img src="https://raw.github.com/micuncang/micuncang.github.com/master/images/blogimg/error1.jpg"></center>
+
+
+<p><br/></p>
+
+<ul>
+<li>转义字符为无法输入或不可见的字符提供一种通用的可扩充机制。</li>
+<li>程序注释会在编译时被忽略，它可以出现在任何空格、制表符或换行符可以出现的地方。</li>
+<li>C语言中的int与float等类型的取值范围取决于使用的机器</li>
+<li>C语言本身没有定义输入输出功能。</li>
+<li>For循环括号内分为三个部分：初始化部分，条件判断部分与加步长部分，这三部分均可以是任何表达式。</li>
+<li>程序中不宜出现魔数，这些数没有向阅读程序的人提供什么信息，使程序修改变得困难。处理魔数的一种方法是赋予它们有意义的名字。可以借助(#define 名字 替换文本, 末尾不添加分号)</li>
+<li>文本的输入输出都是作为字符流处理，不管它从何处输入、输出到何处。文本流是由一行行字符组成的字符序列，每一行由0到多个字符组成，并后跟一个换行符。标准库有责任使每一输入输出流符合这一模型，使用标准库的程序员不用担心各字符行在程序外面怎么表示。</li>
+<li>单个分号叫做空语句，当for循环不需要程序体，而C语言规则要求for循环必须有程序体时，可以使用分号替代。</li>
+<li>夹在单引号中的字符表示一个整数值，这个值等于该字符在机器字符集中的数值。</li>
+<li>在兼有值与赋值两种功能的表达式中，赋值结合次序是由右至左：nl = (nw = (nc = 0))等同于nl = nw = nc = 0</li>
+<li>getchar与putchar一个生产一个消费</li>
+<li>main函数的return向程序的执行环境返回一个值</li>
+<li>函数原型中的参数名是可有可无的，可以写成 int power(int, int)</li>
+<li>函数中的每一个局部变量只在该函数被调用时存在，在该函数执行完退出时消失。</li>
+<li>函数内部可以使用extern引用全局变量而不用顾及全局变量定义在函数前还是函数后。</li>
+<li>过分依赖全局变量充满了危险，这使程序中的数据联系变得不明显。</li>
+</ul>
+
+
+<p><b>0008. C程序设计语言第二章</b></p>
+
+<ul>
+<li>所有整型都包括带符号和无符号两种形式。</li>
+<li>变量与符号常量的命名由字母和数字组成，第一个字符必须为字母，下划线被看作字母。区分大小写，一般变量名使用小写字母，符号常量使用大写字母。</li>
+<li>int通常反映了所用机器中的整数的最自然长度，还可以在int前加上一些限定符：short或者long。例如short int、long int，其中int可以省略。关于int等的长度，各编译器可以根据硬件特性自主选择合适的类型长度，但要遵循下列限制：short与int类型至少为16位，long至少为32位，short不得长于int，int不得长于long</li>
+<li>浮点数有三种长度：float，double，long double</li>
+<li>有关类型长度定义的符号常量以及其他与机器和编译器有关的属性可以在标准头文件&lt;limits.h>和&lt;float.h>中找到。</li>
+<li>常量后缀：L或l表示long，U或u表示无符号，F或f表示float</li>
+<li>常量前缀：0表示8进制，0x表示16进制 (八进制077 = 十进制63)</li>
+<li>常量表达式是仅仅只包含常量的表达式。这种表达式在编译时求值，而不在运行时求值。</li>
+<li>&ldquo;hello, world"等价于"hello, &rdquo; &ldquo;world"，双引号不是字符串的一部分，它只用于限定字符串。（这种写法在JAVA中不支持）</li>
+<li>C字符串常量就是字符数组，字符串以空字符'\0'作为串的结尾。因此存储字符串的物理存储单元数比括在引号中的字符数多一个。这种表示法也说明，C语言对字符串长度没有限制，但程序必须扫描完整个字符串后才能确定字符串的长度。标准的strlen是不把末尾的结束符算作在内的。如下面的程序所示，定义了一个char数组，数组中存储的内容如程序中展示，程序的运行结果为：48，00，str len:2，值48说明的问题是，字符串中的0，实际上存储的是字符'0'而不是数字0，00说明的问题是字符串遇到'\0'就结束，最后的长度2也说明了这个问题，与上面的char[5]没有关系，strlen也不会计算末尾结束符。</li>
+</ul>
+
+
+<p>File /Users/mcc/Project/github/micuncang.github.com/source/downloads/code/ccode/main3.c could not be found</p>
+
+<ul>
+<li>[待延伸]枚举常量是另外一种类型的常量，枚举是一个常量整型值的列表，没有显式说明说明的情况下，enum类型中的第一个枚举名值为0，第二个为1，以此类推，不同枚举中的名字必须互不相同。关于enum与define的对比日后需要仔细研究下的，enum的维护开销貌似确实比define少了不少，枚举类型可以给一组数值添加一个总的有意义的名称代表一组值的公共含义，define只能单独的存值。</li>
+<li>所有的变量都必须先声明后使用。</li>
+<li>常量表达式由常量值组成</li>
+<li>默认情况下，外部变量与静态变量被初始化为0，未经显式初始化的自动变量的值为未定义值。关于静态局部变量，静态外部变量，全局变量，自动变量的理解可以参照<a href="http://sarotti.blog.163.com/blog/static/18406135820113141285115/">这篇文章</a>（正文提取如下：<font color="green">1.静态局部变量:(1)静态局部变量在函数内定义，但不象自动变量那样，当调用时就存在，退出函数时就消失。静态局部变量始终存在着，也就是说它的生存期为整个源程序(2)静态局部变量的生存期虽然为整个源程序，但是其作用域仍与自动变量相同，即只能在定义该变量的函数内使用该变量。退出该函数后， 尽管该变量还继续存在，但不能使用它(3)允许对构造类静态局部量赋初值。若未赋以初值，则由系统自动赋以0值(4)对基本类型的静态局部变量若在说明时未赋以初值，则系统自动赋予0值。而对自动变量不赋初值，则其值是不定的。 根据静态局部变量的特点， 可以看出它是一种生存期为整个源程序的量。虽然离开定义它的函数后不能使用，但如再次调用定义它的函数时，它又可继续使用， 而且保存了前次被调用后留下的值。 因此，当多次调用一个函数且要求在调用之间保留某些变量的值时，可考虑采用静态局部变量。虽然用全局变量也可以达到上述目的，但全局变量有时会造成意外的副作用，因此仍以采用局部静态变量为宜;2.自动变量：作用域仅仅是函数体内，出了函数体就无效;3.静态外部变量和全局变量：静态外部变量 和 全局变量 都是静态存储方式。全局变量用extern来定义，作用域是整个源程序：源程序在的阶段，全局变量都可见。而静态外部变量当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的。 而静态外部变量则限制了其作用域， 即只在定义该变量的源文件内有效， 在同一源程序的其它源文件中不能使用它。(定义的文件适用他）。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用， 因此可以避免在其它源文件中引起错误。从以上分析可以看出， 把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期。把全局变量改变为静态变量后是改变了它的作用域， 限制了它的使用范围。因此static 这个说明符在不同的地方所起的作用是不同的，应予以注意</font>）。</li>
+<li>任何变量的声明都可以使用const限定符限定。该限定符指定变量的值不能被修改。对数组而言，const限定符指定数组所有指定元素的值都不能被修改。</li>
+<li>C语言提供6个位操作运算符，这些运算符只能用于整型操作数。<code>&amp;</code>位与，<code>|</code>位或，<code>^</code>位异或，<code>&lt;&lt;</code>左移，<code>&gt;&gt;</code>右移，<code>～</code>按位求反。位与常用来置0，位或常用来置1。要区分"位运算符"与"逻辑运算符"</li>
+<li>[待延伸]对unsigned类型的无符号值进行右移时，左边空出的部分用0填补，对signed类型的带符号值进行右移时，某些机器进行"算数移位"用符号位填补，某些机器进行"逻辑移位"用0填补</li>
+<li>[待延伸]形如+=、-=的运算符称为赋值运算符。赋值运算符有助于编译器产生高效的代码</li>
+<li>[待延伸]C语言的运算优先级，运算结果与机器以及编译器的关系需要在日后的大量练习中体会摸索。</li>
+<li>C语言没有指定同一运算符中多个操作数的计算顺序，比如f(x) + g(x)，f可能在g前执行，也可能在之后执行，同样也没有指定函数各参数的执行顺序，因此如下的写法是有歧义的<code>printf("%d, %d\n", n++, power(2, n))</code></li>
+</ul>
+
+
+<p><b>0009. C程序设计语言第三章</b></p>
+
+<ul>
+<li>表达式后面加上<code>;</code>就构成了语句。用花括号<code>{}</code>把一组声明和语句括在一起就构成了一个复合语句，也称作程序块，其在语法上等价于单条语句。程序块中可以声明变量，右括号用于结束程序块，其后不需要分号。</li>
+<li>对于if&hellip;else&hellip;语句，每个else与最近的前一个没有else配对的if进行匹配。</li>
+<li>大多数情况下，使用goto语句的程序比不使用goto语句的程序要难以维护和理解，建议尽可能少地使用goto语句。</li>
+</ul>
+
+
+<p><b>0010. C程序设计语言第四章</b></p>
+
+<ul>
+<li>C语言程序一般由许多小的函数组成，而不是由少量较大的函数组成。</li>
+<li>函数定义中的各构成部分都可以省略，最简单函数如下<code>dummy() {}</code>，该函数不执行任何操作也不返回任何值，如果函数定义中省略了返回值参数，默认为int</li>
+<li>函数之间的通信通过参数、函数返回值以及外部变量进行</li>
+<li><code>double sum, atof(char [])</code>声明了一个double类型的变量与一个返回double类型值的函数</li>
+<li>如果函数声明中不包含参数，如<code>double atof()</code>，那么编译程序不会对该函数的参数作任何假设，并会关闭所有的参数检查。对空参数表的这种特殊处理是为了使新的编译器能编译比较老的C语言程序，在新编写的程序中这么做是不提倡的。如果函数带有参数，要声明它们，如果没有参数，使用<code>void</code>进行声明</li>
+<li>C语言程序可以看成由一系列的外部对象构成，这些外部对象可能是变量或函数。external与internal是相对的，internal用于描述定义在函数内部的函数参数及变量。</li>
+<li><p>C语言不允许在一个函数中定义其他函数，因此函数本身是外部的。</p></li>
+<li><p>This is a trick</p></li>
+</ul>
+
+
+<center><img src="https://raw.github.com/micuncang/micuncang.github.com/master/images/blogimg/750x300.png"></center>
+
+
+<p><br/></center></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">cuncang mi</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-27T00:23:00+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/xue-xi/'>学习</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://micuncang.github.io/blog/2013/04/27/cyu-yan-xue-xi/" data-via="" data-counturl="http://micuncang.github.io/blog/2013/04/27/cyu-yan-xue-xi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/21/yi-si-lan-jiao/" title="Previous Post: 伊斯兰教">&laquo; 伊斯兰教</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/05/05/mu-xin-wen-xue-hui-yi-lu-shu-zhai/" title="Next Post: 木心文学回忆录书摘">木心文学回忆录书摘 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section id="titles">
+  <a href="http://micuncang.github.io" title=""><img id="logo" src="http://micuncang.github.io/images/" /></a>
+  <h1 id="site_title"><a href="http://micuncang.github.io" title=""></a></h1>
+  <h3 id="site_subtitle"></h3>
+</section>
+
+<section id="menu">
+  <ul>
+    <li><i class="fa fa-home fa-lg"></i><a href="http://micuncang.github.io"> Home </a></li>
+    <li><i class="fa fa-calendar fa-lg"></i><a href="http://micuncang.github.io/blog/archives/"> Archives </a></li>
+    <li><i class="fa fa-user fa-lg"></i><a href="http://micuncang.github.io/about/"> About </a></li>
+    <li><i class="fa fa-rss fa-lg"></i><a href="http://micuncang.github.io/atom.xml"> Feed </a></li>
+  </ul>
+</section>
+
+<section id="social">
+  
+
+  
+
+  
+
+  
+    <a href="https://github.com/micuncang" title="micuncang"><i class="fa fa-github fa-2x"></i></a>
+  
+
+  
+
+  
+</section>
+
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/01/06/2019nian-shu-zhai/">2016年书摘</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/06/2016nian-shu-zhai/">2016年书摘</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/11/30/cong-0dao-1/">从0到1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/15/chao-chao/">吵吵</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/02/2015nian-shu-zhai/">2015年书摘</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/micuncang">@micuncang</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'micuncang',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2019 - cuncang mi -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'micuncang';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://micuncang.github.io/blog/2013/04/27/cyu-yan-xue-xi/';
+        var disqus_url = 'http://micuncang.github.io/blog/2013/04/27/cyu-yan-xue-xi/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
