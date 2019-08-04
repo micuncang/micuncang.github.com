@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[]]></title>
+  <title><![CDATA[mccrms]]></title>
   <link href="http://micuncang.github.io/atom.xml" rel="self"/>
   <link href="http://micuncang.github.io/"/>
-  <updated>2019-08-04T12:41:14+08:00</updated>
+  <updated>2019-08-04T12:55:49+08:00</updated>
   <id>http://micuncang.github.io/</id>
   <author>
     <name><![CDATA[cuncang mi]]></name>
@@ -14,12 +14,12 @@
 
   
   <entry>
-    <title type="html"><![CDATA[2016年书摘]]></title>
-    <link href="http://micuncang.github.io/blog/2016/01/06/2019nian-shu-zhai/"/>
-    <updated>2016-01-06T15:37:00+08:00</updated>
-    <id>http://micuncang.github.io/blog/2016/01/06/2019nian-shu-zhai</id>
+    <title type="html"><![CDATA[2019年书摘]]></title>
+    <link href="http://micuncang.github.io/blog/2019/08/04/2019nian-shu-zhai/"/>
+    <updated>2019-08-04T12:54:00+08:00</updated>
+    <id>http://micuncang.github.io/blog/2019/08/04/2019nian-shu-zhai</id>
     <content type="html"><![CDATA[<ul>
-<li>渡边淳一借用18世纪弥尔顿的《失乐园》，创作出这部惊世骇俗的作品，跨越二百年时间与之遥相呼应，表现了人类因理性而被逐出乐园的文学母题。 《失乐园》 2016-01-06</li>
+<li>如果你想要说服别人，要诉诸利益，而非诉诸理性</li>
 </ul>
 
 ]]></content>
